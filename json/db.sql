@@ -8,3 +8,6 @@ CREATE TABLE Flights (
     "dateTime" VARCHAR,
     "Status" VARCHAR(255)
 );
+.mode COLUMN
+.headers ON
+.width 3 10 15 15 10 30

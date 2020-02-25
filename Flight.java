@@ -3,7 +3,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
 
 public class Flight {
     public static int flightId = 1;
@@ -72,7 +71,6 @@ public class Flight {
     public static void main(String[] args) throws ParseException {
         ArrayList<Flight> flights = new ArrayList<Flight>();
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        String date = df.format(new Date());
         Date dd = df.parse("25/02/20 11:15");
         flights.add(new Flight("AA111", "Reykjavík (REY)", "Isafjörður (ISA)", dd  , "ja", new String[]{""}));
         System.out.println(df.format(dd));
