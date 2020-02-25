@@ -4,25 +4,27 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class dbHelper {
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, ParseException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
+        ArrayList<Flight> flights = new ArrayList<Flight>();
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:throbo.db");
             String pathToCsv = ".\\json\\flights.csv";
-            insertIntoFlights(readFromCsv(pathToCsv), connection);
-   
+            //insertIntoFlights(readFromCsv(pathToCsv), connection);
+            flights = getFlightsFromDB(connection);
         } catch (Exception e) {
             System.err.println(e.getMessage());
         } finally {
@@ -35,6 +37,10 @@ public class dbHelper {
                 System.err.println("+" + e);
             }
         }
+
+        
+        System.out.println(flights.get(0).toString());
+        System.out.println(flights.get(1).toString());
     }
 
     public static void insertIntoFlights(String[] flights, Connection connection) throws SQLException {
@@ -86,7 +92,24 @@ public class dbHelper {
         return ret;
     }
    
-    public static ArrayList<Flight> getFlights(){
+    public static ArrayList<Flight> getFlightsFromDB(Connection connection) throws SQLException, ParseException {
+        ArrayList<Flight> flights = new ArrayList<Flight>();
+        Statement stmt = connection.createStatement();
+        String sql = "SELECT * from Flights";
+        ResultSet rs = stmt.executeQuery(sql);
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         
-    }  
+        while(rs.next()){
+                String flightNr = (rs.getString(2));
+                String from = (rs.getString(3));
+                String to = (rs.getString(4));
+                String dt = (rs.getString(5));
+                String status = (rs.getString(6));
+                Date date = df.parse(dt); 
+                String[] meta = {""};
+                flights.add(new Flight(flightNr,from,to,date,status,meta));     
+        }
+        return flights;
+
+    } 
 }

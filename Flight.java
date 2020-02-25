@@ -64,16 +64,19 @@ public class Flight {
 
     @Override
     public String toString() {
-        return new String("FlightNumber: " + this.flightNo + "Arriving from: " + this.from + " Arriving to: " + this.to
-                + " Timeplan: " + this.timePlan + " Status: " + this.status);
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        return new String("FlightNumber: " + this.flightNo + " Arriving from: " + this.from + " Arriving to: " + this.to
+                + " Timeplan: " + df.format(this.timePlan) + " Status: " + this.status);
     }
 
     public static void main(String[] args) throws ParseException {
         ArrayList<Flight> flights = new ArrayList<Flight>();
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         String date = df.format(new Date());
-        System.out.print(date);
-
+        Date dd = df.parse("25/02/20 11:15");
+        flights.add(new Flight("AA111", "Reykjavík (REY)", "Isafjörður (ISA)", dd  , "ja", new String[]{""}));
+        System.out.println(df.format(dd));
+        System.out.println(flights.get(0).toString());
         
         
     }
