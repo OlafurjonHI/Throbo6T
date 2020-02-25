@@ -1,3 +1,10 @@
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+
 public class Flight {
     public static int flightId = 1;
     private String flightNo;
@@ -5,35 +12,69 @@ public class Flight {
     private String to;
     private Date timePlan;
     private String status;
-    
-    public Flight(String fNo, String from, String to, Date timePlan, String status) {
-        this.flightNo = fno;
+    private ArrayList<String> flightMeta = new ArrayList<String>();
+
+    public Flight(String fNo, String from, String to, Date timePlan, String status, String[] fMeta) {
+        this.flightNo = fNo;
         this.from = from;
         this.to = to;
         this.timePlan = timePlan;
         this.status = status;
+        for (String m : fMeta) {
+            this.flightMeta.add(m);
+        }
         flightId++;
     }
 
-    public int getFlightId(){
+    public int getFlightId() {
         return flightId;
     }
-    public String getFlightNumber(){
+
+    public String getFlightNumber() {
         return this.flightNo;
     }
-    public void SetFlightNumber(String fNo){
+
+    public void SetFlightNumber(String fNo) {
         this.flightNo = fNo;
     }
 
-    public String toString(){
-        return new String("FlightNumber: " + this.flightNo + "Arriving from: " + this.from + " Arriving to: " + this.to + " Timeplan: " + this.timePlan + " Status: " + this.status);
+    public Date getTimePlan() {
+        return this.timePlan;
     }
 
+    public void setTimePlan(Date newDate) {
+        this.timePlan = newDate;
+    }
 
+    public String[] getFlightMeta() {
+        String[] meta = new String[this.flightMeta.size()];
+        int i = 0;
+        for (String m : this.flightMeta) {
+            meta[i] = m;
+            i++;
+        }
+        return meta;
+    }
 
+    public void addFlightMeta(String[] metas) {
+        for (String m : metas) {
+            this.flightMeta.add(m);
+        }
+    }
 
-    
-    public static void main(String[] args) {
+    @Override
+    public String toString() {
+        return new String("FlightNumber: " + this.flightNo + "Arriving from: " + this.from + " Arriving to: " + this.to
+                + " Timeplan: " + this.timePlan + " Status: " + this.status);
+    }
+
+    public static void main(String[] args) throws ParseException {
+        ArrayList<Flight> flights = new ArrayList<Flight>();
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        String date = df.format(new Date());
+        System.out.print(date);
+
+        
         
     }
 }

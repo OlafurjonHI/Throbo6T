@@ -1,0 +1,123 @@
+{
+ "Flights": [
+  {
+   "FlightNo": "NY113",
+   "From": "Akureyri (AEY)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 09:10",
+   "Status": "Landed: 09:09"
+  },
+  {
+   "FlightNo": "NY327",
+   "From": "Egilsstaðir (EGS)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 10:00",
+   "Status": "Landed: 09:56"
+  },
+  {
+   "FlightNo": "NY017",
+   "From": "Ísafjörður (IFJ)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 12:00",
+   "Status": "Estimated Arrival: 11:53"
+  },
+  {
+   "FlightNo": "NY127",
+   "From": "Akureyri (AEY)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 13:00",
+   "Status": "Estimated Arrival: 12:53"
+  },
+  {
+   "FlightNo": "NY153",
+   "From": "Akureyri (AEY)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 17:00",
+   "Status": "Estimated Arrival: 17:00"
+  },
+  {
+   "FlightNo": "NY408",
+   "From": "Nuuk (GOH)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 20:10",
+   "Status": "Estimated Arrival: 19:39"
+  },
+  {
+   "FlightNo": "NY167",
+   "From": "Akureyri (AEY)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 20:15",
+   "Status": "Estimated Arrival: 20:15"
+  },
+  {
+   "FlightNo": "NY357",
+   "From": "Egilsstaðir (EGS)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 20:25",
+   "Status": "Estimated Arrival: 20:25"
+  },
+  {
+   "FlightNo": "NY113",
+   "From": "Akureyri (AEY)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 09:10",
+   "Status": "Estimated Arrival: 09:10"
+  },
+  {
+   "FlightNo": "NY327",
+   "From": "Egilsstaðir (EGS)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 10:00",
+   "Status": "Estimated Arrival: 10:00"
+  },
+  {
+   "FlightNo": "NY017",
+   "From": "Ísafjörður (IFJ)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 12:00",
+   "Status": "Estimated Arrival: 12:00"
+  },
+  {
+   "FlightNo": "NY127",
+   "From": "Akureyri (AEY)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 13:00",
+   "Status": "Estimated Arrival: 13:00"
+  },
+  {
+   "FlightNo": "NY153",
+   "From": "Akureyri (AEY)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 17:00",
+   "Status": "Estimated Arrival: 17:00"
+  },
+  {
+   "FlightNo": "NY234",
+   "From": "Kulusuk (KUS)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 17:10",
+   "Status": "Estimated Arrival: 17:10"
+  },
+  {
+   "FlightNo": "NY167",
+   "From": "Akureyri (AEY)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 20:15",
+   "Status": "Estimated Arrival: 20:15"
+  },
+  {
+   "FlightNo": "NY357",
+   "From": "Egilsstaðir (EGS)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 20:25",
+   "Status": "Estimated Arrival: 20:25"
+  },
+  {
+   "FlightNo": "NY606",
+   "From": "Reykjavík (RKV)",
+   "To": "Reykjavík (REY)",
+   "DateTime": "25/02/20 22:15",
+   "Status": "Estimated Arrival: 22:15"
+  }
+ ]
+}
