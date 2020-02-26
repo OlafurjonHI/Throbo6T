@@ -1,2 +1,5 @@
 *.class
 run_results.csv
+dbHelper.class
+Flight.class
+.git
