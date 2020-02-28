@@ -23,8 +23,11 @@ public class dbHelper {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:throbo.db");
             String pathToCsv = ".\\json\\flights.csv";
-            insertIntoFlights(readFromCsv(pathToCsv), connection);
+            //insertIntoFlights(readFromCsv(pathToCsv), connection);
             flights = getFlightsFromDB(connection);
+            for (Flight flight : flights) {
+                System.out.println(flight.toString());
+            }
         } catch (Exception e) {
             System.err.println(e.getMessage());
         } finally {
